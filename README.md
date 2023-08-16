@@ -66,3 +66,6 @@ All data is stored inside Docker (named) volumes. This means you cannot triviall
 - [ ] instructions/script for cleaning up
 - [ ] visual debugger
 - [ ] reconsider using (optional) bind mount instead of named volume for workspace
+- [ ] integrate with build/debug system, default compiler
+- [ ] add default extensions for C++ and python
+- [ ] consider adding yapf linter
