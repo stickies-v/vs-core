@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  bitcoin_devcontainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: tail -f /dev/null # Keeps the container running
+    volumes:
+      - workspace:/workspace
+      # - build:/build
+      - ccache_data:/root/.cache/ccache
+      - type: tmpfs
+        target: /ramdisk
+        tmpfs:
+          size: 4000000000  #~4GB ramdisk for -j 40
+
+volumes:
+  # build:
+  ccache_data:
+  workspace:

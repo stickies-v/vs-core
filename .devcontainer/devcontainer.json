@@ -1,0 +1,16 @@
+{
+    "name": "Bitcoin Development Container",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "bitcoin_devcontainer",
+  
+    // Set *default* container specific settings.json values on container create.
+    "settings": { 
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+  
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [],
+    "workspaceFolder": "/workspace",
+    "postStartCommand": "/scripts/init.sh"
+  }
+  
