@@ -1,5 +1,8 @@
 # VS Core
 
+> [!WARNING]
+> This project is in a very experimental stage. Please open an Issue if you encounter any problems.
+
 VS Core is a batteries-included development environment for Bitcoin Core, based on VS Code and Docker.
 
 It allows the developer to run VS Code locally and attach it to a (local) Docker container with all the dependencies and tooling readily configured.
