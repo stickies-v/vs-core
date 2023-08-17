@@ -7,6 +7,7 @@ if [ ! -d "bitcoin" ]; then
     cd bitcoin
     git remote rename origin upstream
 
+    mkdir -p /workspace/bitcoin/.git/hooks/
     cp /scripts/pre-push-hook.sh /workspace/bitcoin/.git/hooks/pre-push
 
     ./autogen.sh
