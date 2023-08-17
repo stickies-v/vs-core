@@ -46,7 +46,7 @@ Next, we'll clone this repo to get the required configuration and scripts availa
 
 ```
 git clone https://github.com/stickies-v/vs-core
-cd vs-core/local/
+cd vs-core/
 devcontainer open
 ```
 
