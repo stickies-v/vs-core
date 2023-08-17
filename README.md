@@ -1,7 +1,7 @@
 # VS Core
 
 > [!WARNING]
-> This project is in a very experimental stage. Please open an Issue if you encounter any problems.
+> This project is in a very experimental stage. Please [open an Issue](https://github.com/stickies-v/vs-core/issues/new/choose) if you encounter any problems.
 
 VS Core is a batteries-included development environment for Bitcoin Core, based on VS Code and Docker.
 
@@ -11,7 +11,7 @@ Besides providing an easy-to-setup environment, it also has some built-in automa
 
 ## Who's it for
 VS Core is most likely to be helpful for you if:
-- you're at least somewhat familiar with an IDE in general
+- you have already used and installed VS Code and Docker
 - you're interested in the Bitcoin Core project and want to get more familiar with the code, tinker around, and maybe even open your first pull request
 - you're an experienced developer that wants to do a one-off contribution to the project but don't want to figure out all the environment setup and just need something quickly that works well enough
 
@@ -40,21 +40,28 @@ VS Core is most likely *not* for you if:
 
 Only a few steps are needed to get your dev environment setup. 
 
-First, we're going to install the `devcontainer` cli to make accessing the dev environment slightly more straightforward. See the [official instructions](https://code.visualstudio.com/docs/devcontainers/devcontainer-cli#_installation) on how to do that.
-
-Next, we'll clone this repo to get the required configuration and scripts available locally, so we can use the `devcontainer` magic to run all subsequent steps automatically.
+First, we'll clone this repo to get the required configuration and scripts available locally.
 
 ```
 git clone https://github.com/stickies-v/vs-core
-cd vs-core/
-devcontainer open
 ```
 
-At this stage, you should see a new window of VS Code pop up, with the notification `Starting Dev Container`. Click "show log" to see the progress of the initialization process. The first run will take quite long, as we're building the Docker container (including all dependencies) and initializing the workspace by cloning the Bitcoin Core repo.
+Open VS Code in the newly created `vs-core` directory. If you have the [`code` command installed](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line), you can do this on the terminal too:
+
+```
+cd vs-core/
+code .
+```
+
+Ensure Docker is running. If the Dev Containers extension [is properly installed](#prerequisites), VS Code should automatically detect the .devcontainers folder and suggest to "Reopen in Container", which is what you want to do. If you don't see that suggestion, [open the command palette](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_command-palette), and run "Dev Containers: Reopen in Container".
+
+At this stage, you should see a new window of VS Code pop up, with the notification `Starting Dev Container`. Click "Show log" to see the progress of the initialization process. The first run will take quite long, as we're building the Docker container (including all dependencies) and initializing the workspace by cloning the Bitcoin Core repo.
 
 ### Daily usage
 
-For subsequent runs, simply navigate to the `vs-core` directory and run `devcontainer open` to pick up where you left off.
+For subsequent runs, you can keep using the "Reopen in Container" command in VS Code, as explained in the previous step. Optionally, you can [install the `devcontainer` cli](https://code.visualstudio.com/docs/devcontainers/devcontainer-cli#_installation) to make accessing the dev environment slightly more straightforward. Once that's done, simply navigate to the `vs-core` directory and run `devcontainer open` to pick up where you left off.
+
+*Note: `devcontainer` cli provides less useful (or no) error messages compared to the VS Code GUI. For example, it will fail silently if you try to run `devcontainer` without docker already running in the background.*
 
 You can use the VS Code environment in exactly the same ways that you're used to, and all the data in the `workspace\` directory (as well as some other system volumes, e.g. for `ccache`) will be persisted across re-builds and re-runs. 
 
