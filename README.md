@@ -56,6 +56,15 @@ Ensure Docker is running. If the Dev Containers extension [is properly installed
 
 At this stage, you should see a new window of VS Code pop up, with the notification `Starting Dev Container`. Click "Show log" to see the progress of the initialization process. The first run will take quite long, as we're building the Docker container (including all dependencies) and initializing the workspace by cloning the Bitcoin Core repo.
 
+> [!NOTE]
+> If the setup fails, these may be helpful steps to understand what's happening:
+>
+> We use docker compose to build the dev container. Running the command manually, we can surface more detailed error messages:
+> ```
+> cd .devcontainer
+> docker compose build
+> ```
+
 ### Daily usage
 
 For subsequent runs, you can keep using the "Reopen in Container" command in VS Code, as explained in the previous step. Optionally, you can [install the `devcontainer` cli](https://code.visualstudio.com/docs/devcontainers/devcontainer-cli#_installation) to make accessing the dev environment slightly more straightforward. Once that's done, simply navigate to the `vs-core` directory and run `devcontainer open` to pick up where you left off.
