@@ -22,7 +22,7 @@ VS Core is most likely *not* for you if:
 
 ## Prerequisites
 - git
-- Docker
+- [Docker and Docker Compose](https://docs.docker.com/compose/install/)
 - [VS Code](https://code.visualstudio.com/)
 - [VS Code Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 - System requirements: see [Dev Containers documentation](https://code.visualstudio.com/docs/devcontainers/containers#_system-requirements)
@@ -32,13 +32,12 @@ VS Core is most likely *not* for you if:
 
 ## How to use
 
-### Initial setup
-
-
-> [!IMPORTANT]
-> Please make sure you've checked and installed all the [prerequisites](#prerequisites).
+### Initial setup
 
 Only a few steps are needed to get your dev environment setup. 
+
+> [!IMPORTANT]
+> Please make sure you've checked and installed all the [prerequisites](#prerequisites). The Dev Containers documentation offers [a helpful installation guide](https://code.visualstudio.com/docs/devcontainers/containers#_installation).
 
 First, we'll clone this repo to get the required configuration and scripts available locally.
 
